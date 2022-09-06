@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    container_name: "paipot_bitflyer_BB_TSI_1min"
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: paipot_bitflyer_container
+    volumes:
+      - ./work:/home/jovyan/work
+    tty: true
+    command: python /home/jovyan/work/main.py
